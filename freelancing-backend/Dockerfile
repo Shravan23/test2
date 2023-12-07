@@ -3,6 +3,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:8-jdk-slim
-COPY --from=build /target/portfolio-builder-0.0.1-SNAPSHOT.jar portfolio-builder.jar
+COPY --from=build /target/freelancing-0.0.1-SNAPSHOT.jar freelancing.jar
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","portfolio-builder.jar"]
+ENTRYPOINT ["java","-jar","freelancing.jar"]
